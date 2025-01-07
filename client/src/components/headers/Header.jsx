@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import React,   { useEffect, useState } from "react";
 import { Button } from "@mui/material";
 import Logo from "../../assets/image2.png";
 import { Country } from "./CountryDropdown";
@@ -6,7 +7,14 @@ import { FiUser } from "react-icons/fi";
 import { IoBagOutline } from "react-icons/io5";
 import { SearchBox } from "./SearchBox";
 import { Navigation } from "./Navigation";
+import { useCountry } from "../../context/countryContext";
 export function Header() {
+    const { getCountries, countries } = useCountry();
+    
+    useEffect(() =>{
+      getCountries();
+    },[]);
+
   return (
     <div className="headerWrapper">
       <div className="top-strip bg-blue">
@@ -26,7 +34,7 @@ export function Header() {
               </Link>
             </div>
             <div className="col-sm-10 d-flex align-items-center part2">
-              <Country />
+              <Country countries={countries}/>
               {/** Header Search Here */}
               <SearchBox />
               {/**  Header Search Here */}

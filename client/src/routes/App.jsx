@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Navbar } from "../components/Navbar";
 import { AuthProvider } from "../context/authContext";
-import { ProtectedRoute } from "./routes";
+import { ProtectedRoute } from "./router";
 import { Header } from "../components/headers/Header";
 import HomePage from "../pages/HomePage";
 import RegisterPage from "../pages/RegisterPage";
@@ -9,13 +9,15 @@ import { TaskFormPage } from "../pages/TaskFormPage";
 import { LoginPage } from "../pages/LoginPage";
 import { TasksPage } from "../pages/TasksPage";
 import { TaskProvider } from "../context/tasksContext";
+import { CountryProvider } from "../context/countryContext";
 
 function App() {
   return (
     <AuthProvider>
       <TaskProvider>
-        <BrowserRouter>
-         <Header />
+        <CountryProvider >
+          <BrowserRouter>
+            <Header />
             <Navbar />
             <Routes>
               <Route path="/" element={<HomePage />} />
@@ -28,7 +30,8 @@ function App() {
                 <Route path="/profile" element={<h1>Profile</h1>} />
               </Route>
             </Routes>
-        </BrowserRouter>
+          </BrowserRouter>
+        </CountryProvider>
       </TaskProvider>
     </AuthProvider>
   );
