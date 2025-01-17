@@ -20,7 +20,6 @@ export const useCountry = () => {
 
 export function CountryProvider({ children }) {
   const [countries, setCountry] = useState([]);
-   console.log(countries)
   
   const getCountries = async () => {
     const res = await getCountriesRequest();

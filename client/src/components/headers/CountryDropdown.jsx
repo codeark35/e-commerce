@@ -6,7 +6,7 @@ import { FaAngleDown } from "react-icons/fa6";
 
 export const Country = ({ countries = [] }) => {
   const [isOpenModal, setIsOpenModal] = useState(false);
-  const [selectedCountry, setSelectedCountry] = useState("España");
+  const [selectedCountry, setSelectedCountry] = useState("Select Location");
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredCountries, setFilteredCountries] = useState(countries);
 
@@ -64,12 +64,12 @@ export const Country = ({ countries = [] }) => {
           <div>
             <Modal.Title as="h5">Choose your delivery location</Modal.Title>
             <p className="text-muted mb-0">
-              Enter your address and we'll specify the offer for your area
+              Enter your address and well specify the offer for your area
             </p>
           </div>
           <Button
             variant="link"
-            className="position-absolute top-0 end-0 p-3"
+            className=" iconClose"
             onClick={() => setIsOpenModal(false)}
           >
             <IoClose size={24} />
@@ -92,8 +92,8 @@ export const Country = ({ countries = [] }) => {
           </div>
 
           <div
-            className="country-list"
-            style={{ maxHeight: "300px", overflowY: "auto" }}
+            className="countryList"
+           
           >
             {(searchQuery ? filteredCountries : allCountries).map((item) => (
               <Button
