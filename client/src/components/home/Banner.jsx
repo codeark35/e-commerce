@@ -1,4 +1,5 @@
 import Slider from "react-slick";
+import { NextArrow, PrevArrow } from "../slick/slick-custom";
 export const Banner = () => {
   var settings = {
     dots: true,
@@ -7,6 +8,8 @@ export const Banner = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
+    nextArrow: <NextArrow />, // Flecha personalizada
+    prevArrow: <PrevArrow />,
     autoplaySpeed: 8000,
     pauseOnHover: true,
     responsive: [
@@ -15,7 +18,7 @@ export const Banner = () => {
   }
 
   return (
-    <div className="homeBannerSection">
+    <div className="homeBannerSection col-md-8">
       <Slider {...settings}>
         
         <div className="item">

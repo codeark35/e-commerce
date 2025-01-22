@@ -1,9 +1,24 @@
+
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
 
 body {
   font-family: "Lato", sans-serif !important;
+  overflow-x: hidden !important;
   font-size: 14px;
   color: rgba(0, 0, 0, 0.8);
+}
+.container {
+  min-width: 90%;
+}
+
+@media (min-width: 1300px) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl {
+    max-width: 1200px;
+  }
 }
 .btn:hover {
   color: var(--bs-btn-hover-color);
@@ -65,17 +80,17 @@ body {
 .headerWrapper .header {
   width: 100%;
   height: auto;
-  padding: 15px 0px;
+  padding: 10px 0px;
 }
 .logo {
   display: flex;
-  width: 85%;
+  width: 60%;
   justify-content: flex-start;
   align-items: center;
 }
 .country-dropdown {
   width: 150px;
-  height: 50px;
+  height: 47px;
   min-width: 150px;
   color: #000 !important;
   border: 1px solid rgba(0, 0, 0, 0.2);
@@ -120,7 +135,7 @@ body {
 .headerSearch input {
   width: 100%;
 
-  padding: 3px 20px !important;
+  padding: 0px 20px !important;
   border: 0px !important;
   border-radius: 5px;
   outline: none !important;
@@ -329,7 +344,7 @@ nav .navPart1 .catWrapper .sidebarNav ul li:hover .submenu button {
 }
 nav .allCatTab {
   background: #2bbef9;
-  padding: 8px 30px;
+  padding: 6px 20px;
   border-radius: 30px;
   -webkit-border-radius: 30px;
   -moz-border-radius: 30px;
@@ -367,7 +382,7 @@ nav .navPart2 ul li a button {
   text-transform: uppercase;
   display: flex;
   align-items: center;
-  padding: 13px 12px;
+  padding: 5px 12px;
   transition: all 0.2 ease-in-out;
   border-radius: 25px;
 }
@@ -510,18 +525,28 @@ nav .navPart2 ul li .submenu a button {
   width: 100%;
   height: auto;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
   cursor: pointer;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  -ms-border-radius: 8px;
-  -o-border-radius: 8px;
+  position: relative;
+  overflow: hidden;
 }
+.productItem .badge {
+  position: absolute;
+  display: inline-block;
+  background: #2bbef9;
+  top: 10px;
+  left: 10px;
+  z-index: 100;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 7px 10px;
+}
+
 .productItem .info {
-  padding: 15px;
+  padding: 5px;
 }
 .productItem h4 {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
   color: #414141;
 }
@@ -545,6 +570,75 @@ nav .navPart2 ul li .submenu a button {
 .info .netPrice.lg {
   font-size: 20px;
 }
+.productItem .actions {
+  position: absolute;
+  top: 10px;
+  right: -100%;
+  /*right: 10px;
+  */z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+}
+.productItem .actions button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  width: 40px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 3px rgba(0 0 0 /12%), 0 1px 2px rgba(0 0 0 /24%) !important;
+  background: #fff;
+  transition: all 0s;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  -webkit-transition: 0s;
+  -moz-transition: 0s;
+  -ms-transition: 0s;
+  -o-transition: 0s;
+}
+.productItem .actions button svg {
+  fill: #333; /* Color del icono */
+  transition: fill 0.2s ease-in-out;
+  opacity: 0.8;
+  pointer-events: none;
+}
+.productItem .actions button:hover {
+  background: #2bbef9;
+}
+.productItem .actions button:hover svg {
+  fill: #ffffff; /* Color del icono */
+  transition: fill 0.2s ease-in-out;
+  opacity: 1;
+  pointer-events: auto;
+}
+.productItem .imgWrapper {
+  overflow: hidden;
+}
+.productItem .imgWrapper:hover .actions {
+  opacity: 1;
+  right: 10px;
+}
+.productItem .imgWrapper img {
+  transition: all 0.3s ease-in-out;
+}
+.productItem:hover .actions {
+  opacity: 1;
+  right: 10px;
+}
+
+.productItem .imgWrapper:hover img {
+  transform: scale(1.1);
+} 
 /* Estilos base para ambas flechas */
 .custom-arrow {
   position: absolute;
@@ -558,17 +652,18 @@ nav .navPart2 ul li .submenu a button {
   align-items: center;
   justify-content: center;
   background: rgba(255, 255, 255, 0.459); /* O el color que prefieras */
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%; /* Para hacerlas circulares */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 /* Posición específica para cada flecha */
 .custom-prev-arrow {
-  left: -20px; /* Ajusta según necesites */
+  left: -10px; /* Ajusta según necesites */
 }
 
 .custom-next-arrow {
-  right: -20px; /* Ajusta según necesites */
+  right: -10px; /* Ajusta según necesites */
 }
 
 /* Estilos para los iconos */
@@ -584,6 +679,14 @@ nav .navPart2 ul li .submenu a button {
 .product_row .productItem {
   padding: 15px; /* Más padding para dar espacio entre productos */
 }
+
+/* Slick Carousel */
+.product_row .slick-slider {
+
+  padding: 1px;
+}
+
+
 
 .product_row .slick-arrow {
   position: absolute;

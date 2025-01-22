@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import React,   { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Button } from "@mui/material";
 import Logo from "../../assets/image2.png";
 import { Country } from "./CountryDropdown";
@@ -18,7 +18,7 @@ export function Header() {
   return (
     <div className="headerWrapper">
       <div className="top-strip bg-blue">
-        <div className="container">
+        <div className="container mb-2">
           <p className="mb-0 mt-0 text-center">
             {" "}
             Este sitio estara <b>ATR</b> cualquier momento{" "}
