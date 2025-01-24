@@ -12,35 +12,34 @@ export const Banner = () => {
     prevArrow: <PrevArrow />,
     autoplaySpeed: 8000,
     pauseOnHover: true,
-    responsive: [
-      {
-  }]
-  }
+    responsive: [{}],
+  };
 
   return (
-    <div className="homeBannerSection col-md-8">
-      <Slider {...settings}>
-        
-        <div className="item">
-          <img
-            src="https://img.freepik.com/vector-gratis/set-banners-compras-moda_23-2148181079.jpg?t=st=1737035417~exp=1737039017~hmac=9d3e5a62d48fe408f49a25760317fd0d3278a8e4b00f06cd532d0fb552ebce32&w=1380"
-            alt="img"
-          />
-        </div>
-        <div className="item">
-          <img
-            src="https://img.freepik.com/vector-gratis/set-banners-compras-moda_23-2148181079.jpg?t=st=1737035417~exp=1737039017~hmac=9d3e5a62d48fe408f49a25760317fd0d3278a8e4b00f06cd532d0fb552ebce32&w=1380"
-            alt="img"
-          />
-        </div>
-        <div className="item">
-          <img
-            src="https://img.freepik.com/vector-gratis/set-banners-compras-moda_23-2148181079.jpg?t=st=1737035417~exp=1737039017~hmac=9d3e5a62d48fe408f49a25760317fd0d3278a8e4b00f06cd532d0fb552ebce32&w=1380"
-            alt="img"
-          />
-        </div>
-      
-      </Slider>
-    </div>
+ 
+      <div className="homeBannerSection ms-5 mt-4">
+        <Slider {...settings}>
+          <div className="item">
+            <img
+              src="https://klbtheme.com/bacola/wp-content/uploads/2021/04/slider-image-1.jpg"
+              alt="img"
+              
+            />
+          </div>
+          <div className="item">
+            <img
+              src="https://klbtheme.com/bacola/wp-content/uploads/2021/04/slider-image-2.jpg"
+              alt="img"
+            />
+          </div>
+          <div className="item">
+            <img
+              src="https://klbtheme.com/bacola/wp-content/uploads/2021/05/slider-3.jpg"
+              alt="img"
+            />
+          </div>
+        </Slider>
+      </div>
+  
   );
 };

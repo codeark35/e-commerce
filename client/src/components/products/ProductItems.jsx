@@ -15,7 +15,7 @@ export const ProductItems = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 4, // Muestra 3 productos a la vez
+    slidesToShow: 5, // Muestra 3 productos a la vez
     slidesToScroll: 1,
     autoplay: false,
     nextArrow: <NextArrow />, // Flecha personalizada
